@@ -1,0 +1,50 @@
+Hej! 
+
+Grymt jobbat med inlämningsuppgiften. Om detta är första gången du kodar så verkar du (spoiler) lösa uppgifterna galant. Notera att jag har skrivit min kamratrespons i Notepad, den kanske ser bättre ut eller åtminstone enklare att läsa om du kopierar ut texten och gör ett radbryt vid varje parentes. Jag bifogar även filen.    
+
+(1) OK    
+Det kommentarer som anges anses enligt uppgiftbeskrivningen som onödiga kommentarer. Detta på grund av att de talar om VAD som sker i stället för VARFÖR. Detta skulle jag säga är ett genomgående tema i övriga deluppgifter likaså.    
+
+(2) OK    
+Även om "förutsättningar" i uppgiftsbeskrivningen menade på att vi inte behövde det så gillar jag det faktum att du använder en enkel felkontroll och styr användarens inmatning. Få rader som ger mycket stöd för en extern användare. Du strukturerar även upp koden i "rubriker" vilket gör den mer lättläst, det gillar jag.    
+
+(3) OK    
+
+(4) OK    
+
+(5) OK    
+Enligt min mening är detta den bäst formaterade deluppgiften, den är luftig och enkel att följa.    
+
+(6) Ej OK    
+Menyvalen 3-5 fungerar inte. De ger inget felmeddelande men ger inga resultat heller. Om du hade någon annan tanke än vad jag kan utröna så får du se vad som kan göras i stället men såhär ser jag på det: Till exempel, val 3. I kodrad 4 finns ingen kommentar om varför du sätter t ex data_kpiData till None. Jag kan ha fel men jag tror det är därför val 3 inte ger något resultat alls. Hade du möjligtvis kunnat använda dig av de ursprungliga listorna från deluppgift 1 i stället? Om du tar bort kodrad 49, 50 och gör så att val 3 bara anger t ex "plotta_data(livsmedelData)" så ger det åtminstone resultat i en korrekt graf. Detsamma gäller val 4 och 5, vad jag lyckats med i alla fall.   
+
+(Övrigt) Superb!    
+Respons för justering: Jag har redan nämnt att kommentarerna skulle kunna bli bättre. Enligt mig skulle du kunna jobba mer på att formattera din kod för att den ska bli mer lättläst. Du skulle t ex kunna använda fler tomma rader mellan olika delar i en funktion, lägga kommentarer i nivå med varandra, bestäm variabler i början av din funktion för att kalla på dem senare etc. 
+   
+Respons för vidareutveckling: Inlämningsuppgiften går ut på att använda angivna listor för KPI, tjänster och livsmedel för 1980-2022. När jag läser din kod ser det ut som att det krävs ganska "få" korrigeringar för att göra programmet mer dynamiskt. Vad jag menar är att med "små" ändringar kan din kod säkerligen användas på andra/uppdaterade listor från SCB, t ex KPI för 1970-2025. Om du har tid över kanske det är värt att titta på. Ett program som kräver mindre underhåll med flera användningsområden (förutsatt att det är liknande formattering).    
+
+Stort lycka till med inlämningen, kommande tenta och även vidare aspirationer kring programmering! 
+
+
+
+
+
+
+
+
+
+Hej, Min respons utifrån så jag uppfattat uppgiften och vad jag förstod fick man även ge konkreta tips. Jag har skrivit kommentaren i word och bara klistrat in så troligen lättare att kopiera texten och läsa den där; Du har lämnat in 2 filer, jag har inte kollat exakt men de verkar ganska lika. Min kamratrespons har jag gjort utifrån filen Svarsfil_inluppg_1122_A237TG-3. Lite tydligare variabelnamn vore bra Du har inte gjort uppgift 6 därmed är dina andra uppfgifter fel eftersom de skall anropas från uppgift 6  
+
+1. Ej OK. Det ser rätt ut att listan blir inläst och retunerad i read_file. Men filvalen skall ligga i uppgift 6 och därifrån kalla på read_file. Vidare om du flyttar filvalen till uppgift 6 så kan fortfarande inte användaren ge sin egna input till vad filnamnet är, om det inte skulle vara ”default” namnen. fileName = input(”ange filnamn:”) if fileName == ”” #användaren har inte gett någon input bara tryckt enter fileName = ”tjänster-1.csv tjansteData=read_file(fileName) men denna delen skall ju ligga i uppgift 6  
+
+2. Ej Ok. Samma här denna skall kunna anropas från uppgift 6. Därav måste du lägga allt i en funktion. Tror du skall kolla lite mer på avsnittet med funktioner Tex nedan def plotKpi(kpiList):#du skapar alltså en funktion för hela uppgift 2 som tar kpilistan som input #massa kod du gör dina saker #sedan när du testar och meckar vill du inte scrolla ner och starta funktionen i uppgift 6 då kan du ha nedan rad som du sedan bara kommenterar bort när du är redo att köra från uppgfit 6 plotKpi(read_file(”kpi-1.csv”)) din lösning för att det ”saknas” värden för vissa månader 2022 gör din lösning väldigt odynamisk. Tex när det finns värden för fler månader måste programmet skrivas om. Du kan istället kolla if m>len(rad): #data saknas för vald månad, bryt loopen och ta nästa rad hade varit bra att göra lösningen lite mer dynamiskt ifall listan nästa gång har tex 54 rader. Läs istället in len() för listan. Istället för att hårdkoda 42 du skapar en lista med åren istället för att hämta åren ifrån listan. Därav du även måste göra reverse för att listorna skall ha samma ordning. Bättre vore att hämta åren från listan med. numpy får inte användas extern bibliotek Månaden skrivs ej ut i grafen  
+
+3. Ej ok. Samma här med relationen till uppgift 6. Copy får inte användas Du kan istället göra en for loop och kopiera varje värde för säg y = [] for rad in q: y.append(rad) graphen skall ha olika benämning med mera beroende på om det är livsmededata eller tjanstedata ser likadan ut hela tiden. finns ingen mening att flytta a = y[0] skicka y[0] direkt till plt.plot. Samma här använd for loop och len() för att loopa igenom raderna så programmet är obereoende av hur mycket data som finns i tabellen.  
+
+4. Ej ok. Jag tror listorna skall komma som argument och funktionen skall anropas från uppgfit 6. For loop har inbyggda räknare For i in range(1,10): #istället för c = c+1  
+
+5. Ej ok. Jag antar denna inte blev färdig  
+
+6. Ej ok. Uppgift inte påbörjad
+
+Lite tilläg; Överlag är nog uppgiften tänkt att kunna ta olika storlekar på tabeller tex. om nästa gång tabellen är för 1970-2023 så skall programmet klara det bara datan är formaterad lika. Sedan uträkningen av procent i uppgift 4 är inte så bra. Den fungerar ju endast eftersom startåret är 1980 och man utgick från värdet hundra. Skulle man be om startåret 1985 fungerar inte programmet längre

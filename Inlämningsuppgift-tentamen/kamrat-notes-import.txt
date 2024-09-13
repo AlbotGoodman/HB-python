@@ -1,0 +1,33 @@
+ANDREW NOTES, TO DO:
+
+- förtydliga variabelnamn
+- 
+
+---------------------------------------------
+
+Hej, 
+
+Min respons utifrån så jag uppfattat uppgiften och vad jag förstod fick man även ge konkreta tips. Jag har skrivit kommentaren i word och bara klistrat in så troligen lättare att kopiera texten och läsa den där; Du har lämnat in 2 filer, jag har inte kollat exakt men de verkar ganska lika. Min kamratrespons har jag gjort utifrån filen Svarsfil_inluppg_1122_A237TG-3. Lite tydligare variabelnamn vore bra Du har inte gjort uppgift 6 därmed är dina andra uppfgifter fel eftersom de skall anropas från uppgift 6  
+
+1. Ej OK. 
+Det ser rätt ut att listan blir inläst och retunerad i read_file. Men filvalen skall ligga i uppgift 6 och därifrån kalla på read_file. Vidare om du flyttar filvalen till uppgift 6 så kan fortfarande inte användaren ge sin egna input till vad filnamnet är, om det inte skulle vara ”default” namnen. fileName = input(”ange filnamn:”) if fileName == ”” #användaren har inte gett någon input bara tryckt enter fileName = ”tjänster-1.csv tjansteData=read_file(fileName) men denna delen skall ju ligga i uppgift 6  
+
+2. Ej Ok. 
+Samma här denna skall kunna anropas från uppgift 6. Därav måste du lägga allt i en funktion. Tror du skall kolla lite mer på avsnittet med funktioner Tex nedan def plotKpi(kpiList):#du skapar alltså en funktion för hela uppgift 2 som tar kpilistan som input #massa kod du gör dina saker #sedan när du testar och meckar vill du inte scrolla ner och starta funktionen i uppgift 6 då kan du ha nedan rad som du sedan bara kommenterar bort när du är redo att köra från uppgfit 6 plotKpi(read_file(”kpi-1.csv”)) din lösning för att det ”saknas” värden för vissa månader 2022 gör din lösning väldigt odynamisk. Tex när det finns värden för fler månader måste programmet skrivas om. Du kan istället kolla if m>len(rad): #data saknas för vald månad, bryt loopen och ta nästa rad hade varit bra att göra lösningen lite mer dynamiskt ifall listan nästa gång har tex 54 rader. Läs istället in len() för listan. Istället för att hårdkoda 42 du skapar en lista med åren istället för att hämta åren ifrån listan. Därav du även måste göra reverse för att listorna skall ha samma ordning. Bättre vore att hämta åren från listan med. numpy får inte användas extern bibliotek Månaden skrivs ej ut i grafen  
+
+3. Ej ok. 
+Samma här med relationen till uppgift 6. Copy får inte användas Du kan istället göra en for loop och kopiera varje värde för säg y = [] for rad in q: y.append(rad) graphen skall ha olika benämning med mera beroende på om det är livsmededata eller tjanstedata ser likadan ut hela tiden. finns ingen mening att flytta a = y[0] skicka y[0] direkt till plt.plot. Samma här använd for loop och len() för att loopa igenom raderna så programmet är obereoende av hur mycket data som finns i tabellen.  
+
+4. Ej ok. 
+Jag tror listorna skall komma som argument och funktionen skall anropas från uppgfit 6. For loop har inbyggda räknare For i in range(1,10): #istället för c = c+1  
+Sedan uträkningen av procent i uppgift 4 är inte så bra. Den fungerar ju endast eftersom startåret är 1980 och man utgick från värdet hundra. Skulle man be om startåret 1985 fungerar inte programmet längre
+
+5. Ej ok. 
+Jag antar denna inte blev färdig  
+
+6. Ej ok. 
+Uppgift inte påbörjad
+
+
+Lite tilläg; 
+Överlag är nog uppgiften tänkt att kunna ta olika storlekar på tabeller tex. om nästa gång tabellen är för 1970-2023 så skall programmet klara det bara datan är formaterad lika. 
